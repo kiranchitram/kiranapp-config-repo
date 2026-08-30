@@ -4,16 +4,14 @@ server:
 spring:
   application:
     name: USER-SERVICE
-
   datasource:
     url: jdbc:mysql://localhost:3306/ecommerceapp
     username: root
     password: 8344
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
-      ddl-auto: update   # auto create/update tables based on entities
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
@@ -23,3 +21,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
