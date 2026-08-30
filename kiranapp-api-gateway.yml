@@ -4,6 +4,14 @@ server:
 spring:
   application:
     name: KIRANAPP-API-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# Gateway routes
+spring:
   cloud:
     gateway:
       routes:
@@ -11,10 +19,6 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/users/**
-        - id: product-service
-          uri: lb://PRODUCT-SERVICE
-          predicates:
-            - Path=/products/**
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
@@ -23,12 +27,11 @@ spring:
           uri: lb://PAYMENT-SERVICE
           predicates:
             - Path=/payments/**
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**
         - id: shipping-service
           uri: lb://SHIPPING-SERVICE
           predicates:
             - Path=/shipping/**
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
