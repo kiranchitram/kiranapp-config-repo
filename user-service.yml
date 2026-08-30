@@ -13,7 +13,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/kiranappdb
     username: root
-    password: yourpassword
+    password: 8344
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
